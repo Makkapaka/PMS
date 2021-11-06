@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: root
+    password: cyjwozai233
+    url: jdbc:mysql://localhost:3306/demo1028?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    mvc:
+      static-path-pattern: /static/**
+    thymeleaf:
+      #?????
+      cache: false
+      check-template: true
+      check-template-location: true
+      #??MVC thymeleaf ????
+      enabled: true
+      encoding: utf-8
+      mode: HTML5
+      prefix: classpath:/templates/
+      suffix: .html
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.bozhi.pms.entity
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
